@@ -1,0 +1,62 @@
+<?xml version='1.0'?>
+
+<robot name="meine_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- IF YOU WANT CHANGE SOME DIMENSION IN THE ROBOT SEE THIS FILE -->
+  <xacro:include filename="$(find meine_bot)/urdf/meine_bot_values.xacro"/>
+
+  <!-- IF YOU WANT CHANGE SOME BEHAVIOR FROM THE INERTIAL OR WHEEL SEE THIS FILE-->
+  <xacro:include filename="$(find meine_bot)/urdf/meine_bot_macros.xacro"/>
+  
+  <link name="robot_footprint"></link> 
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="robot_footprint"/>
+      <child link="chassis" />
+  </joint>
+
+  <link name="chassis">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${length} ${width} ${height}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${length} ${width} ${height}"/>
+      </geometry>
+    </collision>
+
+    <collision name='back_caster_collision'>
+      <origin xyz="${length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_caster - 0.0001}"/>
+      </geometry>
+    </collision>
+
+    <visual name='back_caster_visual'>
+      <origin xyz="${length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_caster}"/>
+      </geometry>
+    </visual>
+
+    <xacro:default_inertial mass="10"/>
+
+  </link>
+
+  <xacro:motor_default name="left" reflect="1"/>
+  <xacro:motor_default name="right" reflect="-1"/>
+
+  <xacro:wheel_default name="left" reflect="1"/>
+  <xacro:wheel_default name="right" reflect="-1"/>
+
+</robot>
+
+  
+
+
+

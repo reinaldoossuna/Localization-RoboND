@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<robot name="meine_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Constants for the robot -->
+
+  <!-- CHASSI-->
+
+  <xacro:property name="width" value="0.1"/>
+  <xacro:property name="length" value="0.2"/>
+  <xacro:property name="height" value="0.0002"/>
+
+  <!-- MOTOR -->
+
+  <xacro:property name="motor_width" value="0.02"/>
+  <xacro:property name="motor_length" value="0.06"/>
+  <xacro:property name="motor_height" value="0.02"/>
+
+  <xacro:property name="x_pos" value="-0.03"/>
+  <xacro:property name="y_pos" value="${width/2 - motor_width/2}"/>
+  <xacro:property name="z_pos" value="${-motor_height/2}"/>
+
+  <!-- CASTER-->
+  <xacro:property name="radius_caster" value="0.01725"/>
+
+  <!-- WHEEL-->
+
+  <xacro:property name="radius_wheel" value="0.03"/>
+  <xacro:property name="length_wheel" value="0.025"/>
+
+  <!-- INERTIA-->
+  <xacro:property name='inertial' value="0.1"/>
+
+</robot>

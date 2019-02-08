@@ -28,6 +28,6 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model meine_bot"/>
 
   <!--launch rviz-->
-  <node name="rviz" pkg="rviz" type="rviz" respawn="false" />
+  <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d /home/catkin_ws/src/meine_bot/RvizConfig.rviz" />
 
 </launch>

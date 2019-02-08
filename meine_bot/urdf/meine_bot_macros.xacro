@@ -65,7 +65,7 @@
           <box size="${motor_length} ${motor_width} ${motor_height}"/>
         </geometry>
         <material name="yellow">
-          <color rgba="0 1 1 1"/>
+          <color rgba="1 1 0 1"/>
         </material>
       </visual>
 

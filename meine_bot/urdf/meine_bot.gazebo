@@ -19,14 +19,18 @@
   </gazebo>
 
   <gazebo reference="chassis">
-      <material>Gazebo/Orange</material>
+      <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="battery">
+      <material>Gazebo/Red</material>
   </gazebo>
 
   <gazebo reference="wheel_left">
-      <material>Gazebo/Black</material>
+      <material>Gazebo/Yellow</material>
   </gazebo>
   <gazebo reference="wheel_right">
-      <material>Gazebo/Black</material>
+      <material>Gazebo/Yellow</material>
   </gazebo>
 
 

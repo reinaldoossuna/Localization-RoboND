@@ -66,7 +66,7 @@
     </collision>
 
 
-    <xacro:default_inertial mass="10"/>
+    <xacro:default_inertial mass="5"/>
 
   </link>
 
@@ -146,7 +146,7 @@
   </link>
 
   <joint name="hokuyo_joint" type="fixed">
-    <origin xyz="${length/2 - hokuyo_width / 2} 0 ${hokuyo_width/2}" rpy="0 0 0"/>
+    <origin xyz="${length/2 } 0 ${hokuyo_width/2}" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="hokuyo" />
   </joint>

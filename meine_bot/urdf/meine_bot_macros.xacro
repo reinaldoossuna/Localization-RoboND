@@ -39,7 +39,7 @@
     </link>
 
     <joint name="wheel_${name}_hinge" type="continuous">
-      <origin xyz="0 0 ${z_pos}" rpy="0 0 0" />
+      <origin xyz="0 ${reflect * 0.01} ${z_pos}" rpy="0 0 0" />
       <parent link="motor_${name}"/>
       <child link='wheel_${name}'  />
       <axis xyz="0 1 0" rpy="0 0 0"/>

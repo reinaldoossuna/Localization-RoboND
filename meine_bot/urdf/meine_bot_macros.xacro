@@ -72,7 +72,7 @@
     </link>
 
     <joint name="motor_${name}_hinge" type="fixed">
-      <origin xyz="${x_pos} ${reflect * y_pos} ${z_pos}" rpy="0 0 0" />
+      <origin xyz="${-x_pos} ${reflect * y_pos} ${z_pos}" rpy="0 0 0" />
       <parent link="chassis"/>
       <child link='motor_${name}'  />
     </joint>

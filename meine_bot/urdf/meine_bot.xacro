@@ -7,6 +7,8 @@
 
   <!-- IF YOU WANT CHANGE SOME BEHAVIOR FROM THE INERTIAL OR WHEEL SEE THIS FILE-->
   <xacro:include filename="$(find meine_bot)/urdf/meine_bot_macros.xacro"/>
+
+  <xacro:include filename="$(find meine_bot)/urdf/meine_bot.gazebo"/>
   
   <link name="robot_footprint"></link> 
   <joint name="robot_footprint_joint" type="fixed">
@@ -31,14 +33,14 @@
     </collision>
 
     <collision name='back_caster_collision'>
-      <origin xyz="${length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
+      <origin xyz="${-length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="${radius_caster - 0.0001}"/>
       </geometry>
     </collision>
 
     <visual name='back_caster_visual'>
-      <origin xyz="${length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
+      <origin xyz="${-length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="${radius_caster}"/>
       </geometry>
@@ -69,7 +71,7 @@
   </link>
 
   <joint name="battery_chassi_joint" type="fixed">
-    <origin xyz="${length/2 - battery_width/2} 0 ${battery_height/2}" rpy="0 0 0" />
+    <origin xyz="${- length/2 + battery_width/2} 0 ${battery_height/2}" rpy="0 0 0" />
     <parent link="chassis"/>
       <child link="battery"/>
   </joint>
@@ -111,7 +113,7 @@
   </link>
 
   <joint name="camera_joint" type="fixed">
-    <origin xyz="${-length/2} 0 ${-camera_height /2}" rpy="0 0 0"/>
+    <origin xyz="${length/2} 0 ${-camera_height /2}" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="camera" />
   </joint>
@@ -144,7 +146,7 @@
   </link>
 
   <joint name="hokuyo_joint" type="fixed">
-    <origin xyz="${-length/2 + hokuyo_width / 2} 0 ${hokuyo_width/2}" rpy="0 0 0"/>
+    <origin xyz="${length/2 - hokuyo_width / 2} 0 ${hokuyo_width/2}" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="hokuyo" />
   </joint>

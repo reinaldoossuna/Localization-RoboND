@@ -1,0 +1,155 @@
+<?xml version='1.0'?>
+
+<robot name="meine_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- IF YOU WANT CHANGE SOME DIMENSION IN THE ROBOT SEE THIS FILE -->
+  <xacro:include filename="$(find meine_bot)/urdf/meine_bot_values.xacro"/>
+
+  <!-- IF YOU WANT CHANGE SOME BEHAVIOR FROM THE INERTIAL OR WHEEL SEE THIS FILE-->
+  <xacro:include filename="$(find meine_bot)/urdf/meine_bot_macros.xacro"/>
+
+  <xacro:include filename="$(find meine_bot)/urdf/meine_bot.gazebo"/>
+  
+  <link name="robot_footprint"></link> 
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="robot_footprint"/>
+      <child link="chassis" />
+  </joint>
+
+  <link name="chassis">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${length} ${width} ${height}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${length} ${width} ${height}"/>
+      </geometry>
+    </collision>
+
+    <collision name='back_caster_collision'>
+      <origin xyz="${-length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_caster - 0.0001}"/>
+      </geometry>
+    </collision>
+
+    <visual name='back_caster_visual'>
+      <origin xyz="${-length/2} 0 ${-radius_caster} " rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_caster}"/>
+      </geometry>
+    </visual>
+
+    <xacro:default_inertial mass="${chassi_mass}"/>
+
+  </link>
+
+  <link name="battery">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${pi/2}"/>
+      <geometry>
+        <box size="${battery_length} ${battery_width} ${battery_height}"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 ${pi/2}"/>
+      <geometry>
+        <box size="${battery_length} ${battery_width} ${battery_height}"/>
+      </geometry>
+    </collision>
+
+
+    <xacro:default_inertial mass="${battery_mass}"/>
+
+  </link>
+
+  <joint name="battery_chassi_joint" type="fixed">
+    <origin xyz="${- length/2 + battery_width/2} 0 ${battery_height/2}" rpy="0 0 0" />
+    <parent link="chassis"/>
+      <child link="battery"/>
+  </joint>
+
+  <xacro:motor_default name="left" reflect="1"/>
+  <xacro:motor_default name="right" reflect="-1"/>
+
+  <xacro:wheel_default name="left" reflect="1"/>
+  <xacro:wheel_default name="right" reflect="-1"/>
+
+  <link name="camera">
+    <inertial>
+      <mass value ="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="1e-6" ixy="0" ixz="0"
+        iyy="1e-6" iyz="0"
+        izz="1e-6"
+      />
+    </inertial>
+
+    <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${camera_length} ${camera_width} ${camera_height}"/>
+      </geometry>
+    </collision>
+
+    <visual name='camera_visual'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${camera_length} ${camera_width} ${camera_height}"/>
+      </geometry>
+      <material name="">
+          <color rgba="0 0 1 0.5"/>
+      </material>
+    </visual>
+
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="${length/2} 0 ${-camera_height /2}" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="camera" />
+  </joint>
+
+  <link name="hokuyo">
+    <inertial>
+      <mass value ="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="1e-6" ixy="0" ixz="0"
+        iyy="1e-6" iyz="0"
+        izz="1e-6"
+      />
+    </inertial>
+
+    <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${hokuyo_width} ${hokuyo_width} ${hokuyo_width}"/>
+      </geometry>
+    </collision>
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint name="hokuyo_joint" type="fixed">
+    <origin xyz="${length/2 } 0 ${hokuyo_width/2}" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="hokuyo" />
+  </joint>
+
+</robot>
+

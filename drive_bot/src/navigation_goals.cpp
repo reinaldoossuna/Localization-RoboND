@@ -17,6 +17,7 @@ struct goal_pose{
 
 move_base_msgs::MoveBaseGoal create_goal(struct goal_pose);
 
+
 std::vector<goal_pose> GOALs= {
                 { 0.995, -2.99, 0.0, 0.0, 0.0, 1.0},
                 {5.24, -3.65, 0.0, 0.0, 0.0, 1.0},

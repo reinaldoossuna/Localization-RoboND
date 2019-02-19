@@ -9,7 +9,7 @@ raytrace_range: 3.0
 transform_tolerance: 0.2
 
 # The radius in meters to which the map inflates obstacle cost values.
-inflation_radius: .55
+inflation_radius: .9
 # A scaling factor to apply to cost values during inflation.
 cost_scaling_factor: 10.0
 

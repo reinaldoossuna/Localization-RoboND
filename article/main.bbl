@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{cox1991}
+I.~J. Cox, ``{An Experiment in Guindance and Navigation of an Autonomous Robot
+  Vehicle},'' no.~9, p.~12, 1991.
+
+\bibitem{Welch1997}
+G.~Welch, G.~Bishop, and C.~Hill, ``{An Introduction to the Kalman Filter
+  by},'' pp.~1--16, 1997.
+
+\bibitem{Sarkar2009}
+P.~Sarkar, {\em {Sequential Monte Carlo Methods in Practice}}, vol.~45.
+\newblock 2009.
+
+\end{thebibliography}

@@ -12,4 +12,31 @@ G.~Welch, G.~Bishop, and C.~Hill, ``{An Introduction to the Kalman Filter
 P.~Sarkar, {\em {Sequential Monte Carlo Methods in Practice}}, vol.~45.
 \newblock 2009.
 
+\bibitem{Pfaff2006}
+P.~Pfaff, W.~Burgard, and D.~Fox, ``{Robust Monte-Carlo localization using
+  adaptive likelihood models},'' {\em Springer Tracts in Advanced Robotics},
+  vol.~22, no.~Mcl, pp.~181--194, 2006.
+
+\bibitem{Celan2016}
+V.~Celan, I.~Stancic, and J.~Music, ``{Cleaning up smart cities-Localization of
+  semi-autonomous floor scrubber},'' {\em 2016 International Multidisciplinary
+  Conference on Computer and Energy Science, SpliTech 2016}, 2016.
+
+\bibitem{Zhang2014}
+T.~Zhang, Z.~J. Chong, B.~Qin, J.~G. Fu, S.~Pendleton, and M.~H. Ang, ``{Sensor
+  fusion for localization, mapping and navigation in an indoor environment},''
+  {\em 2014 International Conference on Humanoid, Nanotechnology, Information
+  Technology, Communication and Control, Environment and Management, HNICEM
+  2014 - 7th HNICEM 2014 Joint with 6th International Symposium on
+  Computational Intelligence and Intelligent In}, no.~November, pp.~1--6, 2014.
+
+\bibitem{Fox1999}
+D.~Fox, W.~Burgard, F.~Dellaert, and S.~Thrun, ``{Monte Carlo Localization:
+  Efficient Position Estimation for Mobile Robots Dieter Fox, Wolfram
+  Burgard},'' {\em AAAI-99 Proceedings}, no.~Handschin 1970, p.~7, 1999.
+
+\bibitem{Ristic2004}
+B.~Ristic and S.~A.~N. Gordon, ``{Beyond the Kalman Filter: Particle Filters
+  for Tracking Application},'' no.~1, pp.~1--5, 2004.
+
 \end{thebibliography}

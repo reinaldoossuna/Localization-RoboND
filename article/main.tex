@@ -29,8 +29,9 @@
 \IEEEtitleabstractindextext{%
 
 \begin{abstract}
-  In this project we implemented the Probabilistic localization system in two robots created in a Gazebo/Rviz simulated
-  environments.Both robots successfully navigated in the provided map.
+  In this project we implemented the Monte Carlo algorigtm in two diferents robots created in a Gazebo/Rviz
+  simulated environments, each equipped with laser range sensors and camera.Both robots successfully navigated in the
+  provided map (Jackal Race car).
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -54,8 +55,8 @@ principal task is to correct the errors in the robot's sensors. The \textit{glob
 unknown and the robot has to determine it. We can cite more difficult problems, the \textit{kidnapped
 robot} problem, in which the robot's pose can change any time. And the \textit{multi-robot localization} problem, where multiple robots
 need to localize themselves.
-\\In this project we'll focus on the global localization problem.
-
+\\In this project we'll focus on the global localization problem using ROS packages, this use a Augmented Monte Carlo
+Localization algorithm, wich uses a partivle filter to track the pose of a robot against a know map.
 
 \section{Background}
 
@@ -295,8 +296,14 @@ The MeineBot has a bigger problem, size it's has just one caster and depends the
 \item What types of scenario could localization be performed?\\
   In know and closed places, without people walking around.
   
-\item Where would you use MCL/AMCL in an industry domain?
+\item Where would you use MCL/AMCL in an industry domain?\\
   The MCL/AMCL would work very well in warehouse or any industry domain.
+\item Localization accuracy and processing time.
+
+
+  The trade between accuracy and processing depends on the number of particles used. With a increase of the number of
+    particles the processing time increase but a good accuracy can be archivied with a small number of particles, this
+    was showed in this project.
 
 \end{itemize}
 
@@ -308,6 +315,7 @@ The AMCL is a powerful tool in the robotic. The fact the all of the algorith is 
     algorithm to map a unknown enviroment. 
 
 
+\nocite{*}
 \bibliography{bib}
 \bibliographystyle{ieeetr}
 

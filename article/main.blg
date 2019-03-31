@@ -7,45 +7,46 @@ Warning--empty journal in cox1991
 Warning--empty journal in Welch1997
 Warning--can't use both volume and number fields in Sarkar2009
 Warning--empty publisher in Sarkar2009
-You've used 3 entries,
+Warning--empty journal in Ristic2004
+You've used 8 entries,
             1876 wiz_defined-function locations,
-            497 strings with 3784 characters,
-and the built_in function-call counts, 632 in all, are:
-= -- 58
-> -- 19
+            534 strings with 5042 characters,
+and the built_in function-call counts, 1906 in all, are:
+= -- 178
+> -- 83
 < -- 0
-+ -- 8
-- -- 5
-* -- 43
-:= -- 97
-add.period$ -- 4
-call.type$ -- 3
-change.case$ -- 2
++ -- 31
+- -- 23
+* -- 142
+:= -- 290
+add.period$ -- 9
+call.type$ -- 8
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 34
-empty$ -- 65
-format.name$ -- 5
-if$ -- 150
+cite$ -- 13
+duplicate$ -- 97
+empty$ -- 179
+format.name$ -- 23
+if$ -- 454
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 4
-newline$ -- 13
-num.names$ -- 3
-pop$ -- 15
+int.to.str$ -- 8
+missing$ -- 9
+newline$ -- 28
+num.names$ -- 8
+pop$ -- 29
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 17
+skip$ -- 53
 stack$ -- 0
-substring$ -- 23
-swap$ -- 10
+substring$ -- 89
+swap$ -- 32
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 7
-width$ -- 4
-write$ -- 28
-(There were 4 warnings)
+warning$ -- 5
+while$ -- 22
+width$ -- 9
+write$ -- 76
+(There were 5 warnings)
